@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="google_client_id">GOOGLE-CLIENT-ID-HERE(WEB)</string>
+    <string name="facebook_app_id">FACEBOOK-APP-ID-HERE</string>
+    <string name="fb_login_protocol_scheme">fbFACEBOOK-APP-ID-HERE</string>
+    <string name="facebook_client_token">FACEBOOK-CLIENT-TOKEN-HERE</string>
+
+    <string name="asset_statements" translatable="false">
+        [{
+             \"include\": \"https://Sagi.gigya-cs.com/.well-known/assetlinks.json\"
+        }]
+    </string>
+
+</resources>
