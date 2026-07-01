@@ -1,0 +1,70 @@
+group 'com.sap.gigya_flutter_plugin'
+version '1.0.1'
+
+buildscript {
+    ext {
+        kotlin_version = '1.8.0'
+        gradle_version = '7.4.2'
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        mavenLocal()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 33
+    namespace 'com.sap.gigya_flutter_plugin'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+    defaultConfig {
+        minSdkVersion 23
+        consumerProguardFiles 'lib-proguard-rules.txt'
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    
+    // Gigya SDK core implementation.
+    api 'com.sap.oss.gigya-android-sdk:sdk-core:7.+'
+    api 'com.sap.oss.gigya-android-sdk:sdk-auth:2.2.+'
+    api 'com.sap.oss.gigya-android-sdk:sdk-bio:2.1.+'
+
+    api 'com.google.code.gson:gson:2.8.9'
+
+    api 'androidx.appcompat:appcompat:1.5.1'
+}
