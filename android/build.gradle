@@ -32,7 +32,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 33
+    // 33 is too low for this plugin's own transitive androidx dependencies
+    // (fragment 1.7.1, window 1.2.0, activity 1.8.1, lifecycle 2.7.0 all
+    // require consumers to compile against 34+), which fails
+    // checkReleaseAarMetadata. Consuming apps were working around this by
+    // force-raising every plugin module's compileSdk from their root
+    // build.gradle; 36 matches that floor so no workaround is needed.
+    compileSdkVersion 36
     namespace 'com.sap.gigya_flutter_plugin'
 
     compileOptions {
