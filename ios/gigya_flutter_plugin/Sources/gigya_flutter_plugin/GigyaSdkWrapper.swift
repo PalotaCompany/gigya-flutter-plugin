@@ -1,5 +1,7 @@
+import Flutter
 import Gigya
 import GigyaAuth
+import UIKit
 /**
  Plugin specific error constants.
  */

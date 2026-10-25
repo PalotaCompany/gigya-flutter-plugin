@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'SAP' => 'ospo@sap.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'gigya_flutter_plugin/Sources/gigya_flutter_plugin/**/*.swift'
   s.dependency 'Flutter'
   s.dependency 'Gigya', '>= 1.8.0'
   s.dependency 'GigyaAuth', '>= 1.1.2'

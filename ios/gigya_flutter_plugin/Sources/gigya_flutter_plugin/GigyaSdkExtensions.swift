@@ -1,5 +1,6 @@
 import Foundation
 import Gigya
+import UIKit
 
 extension Dictionary {
     /**

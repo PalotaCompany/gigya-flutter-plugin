@@ -26,7 +26,7 @@ flutter:
         package: com.sap.gigya_flutter_plugin
         pluginClass: GigyaFlutterPlugin
       ios:
-        pluginClass: GigyaFlutterPlugin
+        pluginClass: SwiftGigyaFlutterPlugin
 
 false_secrets:
   - example/android/app/src/main/res/values/strings.xml
